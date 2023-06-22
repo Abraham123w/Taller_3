@@ -1,2 +1,4 @@
 C:/Users/abrah/OneDrive/Escritorio/UNIVERSIAS 2023/OneDrive/TAREAS DE PRAGRAMACION/taller3/Taller_3/vendedor.txt
 C:/Users/abrah/OneDrive/Escritorio/UNIVERSIAS 2023/OneDrive/TAREAS DE PRAGRAMACION/taller3/Taller_3/inmueble.txt
+
+C:/Users/abrah/OneDrive/Escritorio/UNIVERSIAS 2023/OneDrive/TAREAS DE PRAGRAMACION/taller3/Taller_3/tipo.txt
