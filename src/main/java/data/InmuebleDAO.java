@@ -1,10 +1,11 @@
 package data;
 
 import model.Inmueble;
+import model.Tipo;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class InmuebleDAO {
     private static final String rutaArchivo = "C:/Users/abrah/OneDrive/Escritorio/UNIVERSIAS 2023/OneDrive/TAREAS DE PRAGRAMACION/taller3/Taller_3/inmueble.txt";
@@ -25,5 +26,42 @@ public class InmuebleDAO {
         }
 
         return exito;
+    }
+
+    public static List<Inmueble> buscarArticulos(String tipo, String ubicacion, String precio) {
+        List<Inmueble> articulosEncontrados = new ArrayList<>();
+        List<Inmueble> articulos = leerArticulos(); // Suponiendo que tienes un método para leer los artículos
+
+        for (Inmueble articulo : articulos) {
+            if (
+                    articulo.getPrecio().trim().equalsIgnoreCase(precio) &&
+                    articulo.getTipo().trim().equalsIgnoreCase(tipo) &&
+                    articulo.getUbicacion().trim().equalsIgnoreCase(ubicacion)) {
+                articulosEncontrados.add(articulo);
+            }
+        }
+
+        return articulosEncontrados;
+    }
+    public static List<Inmueble> leerArticulos() {
+        List<Inmueble> articulos = new ArrayList<>();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] datosArticulo = linea.split(",");
+                String tipo = datosArticulo[0].trim();
+                String ubicacion = datosArticulo[1].trim();
+                String precio= datosArticulo[2].trim();
+
+
+                Inmueble articulo = new Inmueble(tipo, ubicacion, precio);
+                articulos.add(articulo);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return articulos;
     }
 }

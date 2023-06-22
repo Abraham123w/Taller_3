@@ -41,12 +41,12 @@ public class AgregarVendedorServlet extends HttpServlet {
 
         if ( rutValido && clienteDuplicado) {
            VendedorDAO.agregarCliente(vendedor);
-            request.setAttribute("cliente", vendedor);
+            request.setAttribute("vendedor", vendedor);
             respuesta1.forward(request, response);
         } else {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            out.println("Error al agregar el cliente");
+            out.println("Error al agregar el vendedor");
             respuesta2.forward(request, response);
         }
     }

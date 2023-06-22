@@ -82,4 +82,34 @@ public class AgregarInmuebleServlet extends HttpServlet {
 
         return formatos;
     }
+    public static String generarTablaLibros(List<Inmueble> libros) {
+        StringBuilder tabla = new StringBuilder();
+
+        tabla.append("<table>");
+        tabla.append("<tr>");
+        tabla.append("<th>Tipo</th>");
+        tabla.append("<th>Ubicacion</th>");
+        tabla.append("<th>Precio</th>");
+
+        tabla.append("</tr>");
+
+        for (Inmueble libro : libros) {
+            String tipo = libro.getTipo().trim();
+            String ubicacion= libro.getUbicacion().trim();
+            String precio = libro.getPrecio().trim();
+
+
+
+            tabla.append("<tr>");
+            tabla.append("<td>").append(tipo).append("</td>");
+            tabla.append("<td>").append(ubicacion).append("</td>");
+            tabla.append("<td>").append(precio).append("</td>");
+
+            tabla.append("</tr>");
+        }
+
+        tabla.append("</table>");
+
+        return tabla.toString();
+    }
 }
