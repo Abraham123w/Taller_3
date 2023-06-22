@@ -27,7 +27,7 @@
     <label for="ubicacion">Ubicacion:</label>
     <input type="text" name="ubicacion" id="ubicacion"><br>
 
-    <label for="precio">Editorial:</label>
+    <label for="precio">Precio:</label>
     <input type="text" name="precio" id="precio"><br>
 
     <input type="submit" value="Agregar">
