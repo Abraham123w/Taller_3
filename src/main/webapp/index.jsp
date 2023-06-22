@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gestion de libros</title>
+    <title>Inmuebles temuco</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-<h1>Gestion de Libros</h1>
+<h1>INMUEBLES TEMUCO</h1>
 
 <div class="botones">
     <a href="agregarVendedor.jsp" class="boton">Agregar Vendedor</a>
